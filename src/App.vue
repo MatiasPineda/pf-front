@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <p-appbar />
     <v-content style="background-color: white">
       <!-- <HelloWorld /> -->
       <router-view />
@@ -11,12 +12,14 @@
 <script>
 // import HelloWorld from './components/HelloWorld';
 import PFooter from "./components/PFooter";
+import PAppbar from "./components/PAppbar";
 
 export default {
   name: 'App',
 
   components: {
     // HelloWorld,
+    PAppbar,
     PFooter,
   },
 
