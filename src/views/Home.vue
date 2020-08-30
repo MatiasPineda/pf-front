@@ -4,6 +4,8 @@
 <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <p-intro />
     <v-img
+        contain
+        max-width="100vw"
         :src="require('@/assets/bg.png')"
     >
       <about-me />
