@@ -1,14 +1,12 @@
 <template>
-    <v-container id="introWrapper" class="ma-0 mr-0" fill-height align-center>
+    <v-container id="introWrapper" fill-height>
 
-        <v-row align="center" justify="center" class="white--text">
+        <v-row class="white--text">
           <v-col cols="12">
-            <div>
               Matías Pineda
-            </div>
-            <div>
-              Santiago, Chile
-            </div>
+          </v-col>
+          <v-col cols="12">
+            Santiago, Chile
           </v-col>
         </v-row>
     </v-container>

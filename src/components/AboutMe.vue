@@ -22,11 +22,12 @@
           </v-card-text>
           <v-card-title class="pb-1">Lenguajes, Frameworks y Librerías</v-card-title>
           <v-card-actions class="pl-3">
-              <v-img class="tech-icon" :src="require('@/assets/html5.svg')" contain max-height="2em" max-width="2em" />
-              <v-img class="tech-icon" :src="require('@/assets/css3.svg')" contain max-height="2em" max-width="2em" />
-              <v-img class="tech-icon" :src="require('@/assets/js.png')" contain max-height="2em" max-width="2em" />
-              <v-img class="tech-icon" :src="require('@/assets/python.svg')" contain max-height="2em" max-width="2em" />
-              <v-img class="tech-icon" :src="require('@/assets/django.svg')" contain max-height="2em" max-width="2em" />
+<!--            <tech-logos v-bind:techList="all techs" />  Need to add this to the api  -->
+            <v-img class="tech-icon" :src="require('@/assets/html5.svg')" contain max-height="2em" max-width="2em" />
+            <v-img class="tech-icon" :src="require('@/assets/css3.svg')" contain max-height="2em" max-width="2em" />
+            <v-img class="tech-icon" :src="require('@/assets/js.svg')" contain max-height="2em" max-width="2em" />
+            <v-img class="tech-icon" :src="require('@/assets/python.svg')" contain max-height="2em" max-width="2em" />
+            <v-img class="tech-icon" :src="require('@/assets/django.svg')" contain max-height="2em" max-width="2em" />
           </v-card-actions>
         </v-col>
       </v-row>

@@ -4,16 +4,16 @@
 <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <p-intro />
     <v-img
+        position="top"
         contain
         max-width="100vw"
+        max-height="1080px"
         :src="require('@/assets/bg.png')"
+        class="align-center"
     >
-      <about-me />
-
-      <p-projects />
-
+      <about-me/>
     </v-img>
-
+    <p-projects />
   </div>
 </template>
 
