@@ -1,17 +1,17 @@
 <template>
-  <v-container class="pa-0">
-    <v-card-actions>
-      <v-row v-for="(tech,j) in techList" :key="j">
-        <v-col>
-          <v-img
-              class="tech-icon"
-              :src="require('@/assets/' + logo[0][tech.name])"
-              contain max-height="2em" max-width="2em"
-          />
-        </v-col>
-      </v-row>
-    </v-card-actions>
-  </v-container>
+  <v-row id="techi">
+    <v-col v-for="(tech,j) in techList" :key="j"
+           cols="2"
+           class="ma-1 pa-0"
+    >
+    <v-img
+        class="tech-icon mx-auto mx-1"
+        :src="require('@/assets/' + logo[0][tech.name])"
+        contain max-width="2rem" max-height="2rem"
+
+      />
+    </v-col>
+  </v-row>
 </template>
 
 <script>

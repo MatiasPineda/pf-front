@@ -1,17 +1,17 @@
 <template>
   <v-card
     class="mx-auto"
-    max-width="80vw"
   >
     <v-container>
       <v-row>
-        <v-col cols="4">
+        <v-col cols="11" sm="5" md="5" class="mx-auto my-auto">
           <v-img
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+              class="justify-center"
           >
           </v-img>
         </v-col>
-        <v-col cols = 8 align="center">
+        <v-col cols="11" sm="7" md="7" class="mx-auto">
           <v-card-title >Acerca de mí</v-card-title>
           <v-card-text>
             <p class="pl-2 text-justify" >Actualmente estudiante vespertino y futuro Ingeniero Informático.

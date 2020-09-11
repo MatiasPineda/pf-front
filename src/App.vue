@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <p-appbar />
-    <v-content style="background-color: white">
+    <p-appbar  />
+    <v-main>
       <!-- <HelloWorld /> -->
       <router-view />
-    </v-content>
+    </v-main>
     <p-footer />
   </v-app>
 </template>
@@ -22,9 +22,16 @@ export default {
     PAppbar,
     PFooter,
   },
+  meta: {
+    title: 'Matías Pineda',
+  },
 
   data: () => ({
     //
   }),
 };
 </script>
+
+<style lang="scss">
+  @import "./scss/app";
+</style>

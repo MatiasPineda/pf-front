@@ -4,16 +4,22 @@
 <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <p-intro />
     <v-img
-        position="top"
-        contain
-        max-width="100vw"
-        max-height="1080px"
+        id="aboutMeSection"
         :src="require('@/assets/bg.png')"
-        class="align-center"
+        class="align-center pa-6 pa-md-15 "
     >
-      <about-me/>
+      <about-me />
+      <div class="text-center">
+        <v-btn
+            id="projectsBtn"
+            v-text="'MIRA MI TRABAJO'"
+            class="ma-3 mx-auto mb-9"
+            @click="$vuetify.goTo('#projectWrapper', {duration: 900,offset: 0,easing: 'easeInOutCubic'})"
+        />
+      </div>
+
     </v-img>
-    <p-projects />
+    <p-projects/>
   </div>
 </template>
 
@@ -32,3 +38,7 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+
+</style>
