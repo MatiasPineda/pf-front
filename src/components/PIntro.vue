@@ -10,7 +10,7 @@
           </v-col>
           <v-col id="introPlace" cols="12" class="introSubtitle text-center pt-0">
             Santiago, Chile
-          </v-col>s
+          </v-col>
           <v-col id="contactLogos" cols="12">
             <contact-logos />
           </v-col>
@@ -65,10 +65,16 @@
     #introName{
       font-size: 6vw;
       font-family: "Noto Sans JP Bold";
+      @media (max-width: 600px) {
+        font-size: 11vw;
+      }
     }
 
     .introSubtitle{
       font-size: 3vw;
+      @media (max-width: 600px) {
+        font-size: 6vw;
+      }
     }
 
     #introArrow {

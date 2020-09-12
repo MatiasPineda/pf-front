@@ -5,6 +5,20 @@
           Proyectos
       </v-col>
 
+      <v-divider />
+
+      <v-col
+        v-for="(app, i) in apps"
+        :key="i"
+        cols="12"
+        sm="6"
+        md="4"
+        lg="4"
+        class="mx-auto"
+      >
+        <project-card2 v-bind:app="app" />
+      </v-col>
+
       <v-col
         v-for="(app, i) in apps"
         :key="i"
@@ -23,10 +37,12 @@
 
 <script>
   import ProjectCard from "./ProjectCard";
+  import ProjectCard2 from "./ProjectCard2";
 
   export default {
     name: "PProjects",
     components: {
+      ProjectCard2,
       ProjectCard
     },
     data() {
@@ -286,7 +302,11 @@
     margin-top: -1px;
 
     #projectTitle {
-      font-size: 3vw;
+      font-family: "Noto Sans JP Bold";
+      font-size: 2.5rem;
+      @media (min-width: 1264px ) {
+        font-size: 3vw;
+      }
     }
   }
 

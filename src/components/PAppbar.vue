@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar class="pa-0" flat absolute color="transparent" >
+  <v-app-bar class="pa-0" flat absolute color="transparent">
     <v-spacer />
     <contact-logos class="contactLogos" />
   </v-app-bar>
@@ -15,6 +15,7 @@
 
 <style lang="scss">
   .contactLogos {
+    top:0;
     * {
       opacity: 0.8;
     }

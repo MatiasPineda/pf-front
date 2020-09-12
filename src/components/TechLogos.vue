@@ -1,13 +1,13 @@
 <template>
   <v-row id="techi">
     <v-col v-for="(tech,j) in techList" :key="j"
-           cols="2"
-           class="ma-1 pa-0"
+           cols="1"
+           class="pa-0 mx-1 mx-md-1 mx-xl-3"
     >
     <v-img
-        class="tech-icon mx-auto mx-1"
+        class="tech-icon"
         :src="require('@/assets/' + logo[0][tech.name])"
-        contain max-width="2rem" max-height="2rem"
+        contain height="8vh" width="8vh"
 
       />
     </v-col>

@@ -1,6 +1,7 @@
 <template>
   <v-card
-    class="mx-auto"
+      id="aboutMeCard"
+      class="mx-auto"
   >
     <v-container>
       <v-row>
@@ -45,6 +46,9 @@
 </script>
 
 <style scoped>
+  #aboutMeCard {
+    background-color: #e6fbff
+  }
   .tech-icon{
     margin: .4em;
   }
