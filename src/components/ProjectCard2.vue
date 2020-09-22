@@ -19,12 +19,14 @@
 
       </v-row>
 
+
       <v-overlay
             v-if="hover"
             :opacity=".95"
             absolute
           >
-        <v-card absolute id="overlayCard" color="transparent" class="ma-0">
+        <v-card id="overlayCard" color="transparent" class="">
+<!--          añadir flat cuando esté arreglado el tamaño-->
           <v-card-title v-text="app.name" />
           <v-card-actions>
             <v-btn @click.stop=dialogTrueIfDesktop()>
@@ -60,9 +62,11 @@
           </v-card-actions>
         </v-card>
       </v-overlay>
+
       <v-dialog id="projectDialog" v-model="dialog" max-width="80vw">
         <dialog-card v-bind:app="app" />
       </v-dialog>
+
     </v-card>
   </v-hover>
 </template>
@@ -96,10 +100,6 @@
 <style lang="scss">
   #projectCard {
     background-color: #e6fbff;
-  }
-
-  #overlayCard {
-
   }
 </style>
 

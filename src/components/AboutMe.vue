@@ -6,11 +6,13 @@
     <v-container>
       <v-row>
         <v-col cols="11" sm="5" md="5" class="mx-auto my-auto">
-          <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-              class="justify-center"
-          >
-          </v-img>
+          <v-avatar size="95%" rounded>
+            <img
+                :src="require('@/assets/avatar.png')"
+                id="aboutMeImage"
+            >
+
+          </v-avatar>
         </v-col>
         <v-col cols="11" sm="7" md="7" class="mx-auto">
           <v-card-title >Acerca de mí</v-card-title>
@@ -45,10 +47,16 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss">
   #aboutMeCard {
-    background-color: #e6fbff
+    background-color: #e6fbff;
   }
+
+  #aboutMeImage {
+    border-radius: 100%;
+    border: 4px solid #023E8A;
+  }
+
   .tech-icon{
     margin: .4em;
   }
