@@ -3,10 +3,9 @@
       id="aboutMeCard"
       class="mx-auto"
   >
-    <v-container>
       <v-row>
-        <v-col cols="11" sm="5" md="5" class="mx-auto my-auto">
-          <v-avatar size="95%" rounded>
+        <v-col cols="12" sm="5" md="5" xl="5" class="mx-auto my-auto">
+          <v-avatar size="90%" rounded class="ma-6">
             <img
                 :src="require('@/assets/avatar.png')"
                 id="aboutMeImage"
@@ -14,16 +13,16 @@
 
           </v-avatar>
         </v-col>
-        <v-col cols="11" sm="7" md="7" class="mx-auto">
-          <v-card-title >Acerca de mí</v-card-title>
-          <v-card-text>
+        <v-col cols="12" sm="7" md="7" class="mx-auto">
+          <v-card-title id="aboutMeTitle" >Acerca de mí</v-card-title>
+          <v-card-text id="aboutMeText">
             <p class="pl-2 text-justify" >Actualmente estudiante vespertino y futuro Ingeniero Informático.
                Me interesa el desarrollo web utilizando herramientas como Django, MySQL, entre otras.
               Me siento cómodo con lenguajes como Python, HTML, CSS y Javascript;
               y estoy constantemente trabajando para perfeccionar mis habilidades.
             </p>
           </v-card-text>
-          <v-card-title class="pb-1">Lenguajes, Frameworks y Librerías</v-card-title>
+          <v-card-title id="aboutMeTech" class="pb-1">Lenguajes, Frameworks y Librerías</v-card-title>
           <v-card-actions class="pl-3">
 <!--            <tech-logos v-bind:techList="all techs" />  Need to add this to the api  -->
             <v-img class="tech-icon" :src="require('@/assets/html5.svg')" contain max-height="2em" max-width="2em" />
@@ -34,9 +33,6 @@
           </v-card-actions>
         </v-col>
       </v-row>
-    </v-container>
-
-
 
   </v-card>
 </template>
@@ -50,11 +46,31 @@
 <style lang="scss">
   #aboutMeCard {
     background-color: #e6fbff;
-  }
 
-  #aboutMeImage {
-    border-radius: 100%;
-    border: 4px solid #023E8A;
+    #aboutMeImage {
+      border-radius: 100%;
+      border: 4px solid #023E8A;
+    }
+
+    * {
+      font-size: calc(16px + (64 - 16) * ((100vw - 768px) / (3840 - 768)));
+      line-height: 1.2em;
+
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+      }
+      @media screen and (min-width: 3840px) {
+        font-size: 64px;
+      }
+    }
+
+    #aboutMeTitle {
+      font-size: 2em; /* <h1> */
+    }
+
+    #aboutMeTech {
+      font-size: 1.5em; /* <h2> */
+    }
   }
 
   .tech-icon{

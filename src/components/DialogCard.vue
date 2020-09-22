@@ -13,22 +13,15 @@
             contain
           ></v-carousel-item>
         </v-carousel>
-
-<!--        <v-img-->
-<!--          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"-->
-<!--          max-width="90%"-->
-<!--          max-height="70%"-->
-<!--          contain-->
-<!--          class="mt-9 mx-auto"-->
-<!--        />-->
       </v-col>
 
 
       <v-col id="infoColumn" cols="12" sm="5" class="mx-auto fill-height" >
 
-        <v-card-title class="headline" v-text="app.name"></v-card-title>
+        <v-card-title id="projectTitle" v-text="app.name"></v-card-title>
 
         <v-card-subtitle
+            id="projectDescription"
             v-text="app.description"
             class="my-4"
         />
@@ -99,5 +92,23 @@
  }
   #infoColumn {
     background-color: #CAF0F8;
+
+    * {
+      font-size: calc(16px + (64 - 16) * ((100vw - 768px) / (3840 - 768)));
+      line-height: 1.2em;
+
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+      }
+      @media screen and (min-width: 3840px) {
+        font-size: 64px;
+      }
+    }
+
+    #projectTitle{
+      font-size: 2em; /* <h1> */
+    }
+
+
   }
 </style>
