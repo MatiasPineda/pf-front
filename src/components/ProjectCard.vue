@@ -1,18 +1,21 @@
 <template>
   <v-hover id="hoverrrrrrrr" v-slot:default="{ hover }">
-    <v-card id="projectCard" class="px-3">
+    <v-card class="projectCard px-3">
       <v-row>
         <v-col cols="12" class="">
           <v-img
+              align="center"
+              :aspect-ratio="16/10"
               class="mx-2"
               :src=app.imagenes[0].image
+              contain
           />
         </v-col>
 
         <v-divider class="ma-1" />
 
 
-        <v-col cols="12" class="pa-0">
+        <v-col cols="12" class="pa-0 align-end">
           <v-card-actions class="pa-0 ma-3">
             <tech-logos v-bind:techList="app.skills_project" class="justify-center" />
           </v-card-actions>
@@ -101,7 +104,7 @@
 </script>
 
 <style lang="scss">
-  #projectCard {
+  .projectCard {
     background-color: #e6fbff;
   }
 </style>

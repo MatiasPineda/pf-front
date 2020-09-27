@@ -62,10 +62,7 @@
               "name": "CSS"
             },
             {
-              "name": "LinkedIn"
-            },
-            {
-              "name": "PostgreSQL"
+              "name": "Javascript"
             },
             {
               "name": "VueJS"

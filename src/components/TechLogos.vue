@@ -43,6 +43,7 @@
           "Python": "python.svg",
           "SQLite": "sqlite.svg",
           "VueJS": "vue.svg",
+          "PyQt5": "Python_and_Qt.svg",
         }]
       }
     },

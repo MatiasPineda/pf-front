@@ -16,7 +16,7 @@
         lg="4"
         class="mx-auto"
       >
-        <project-card v-bind:app="app" />
+        <project-card v-bind:app="app" class="fill-height" />
       </v-col>
 
       <v-col
@@ -48,7 +48,7 @@
       getProjects() {
         const path = 'http://127.0.0.1:8000/api/v1.0/projects/'
         axios.get(path).then((response) => {
-          this.apps = response.data
+          this.apps = this.localApps.concat(response.data)
         })
             .catch((error) => {
               console.log(error)
@@ -59,252 +59,116 @@
     data() {
       return {
         apps: [],
-        /*
-        apps: [
-          {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            // "live_url": "https://github.com/MatiasPineda/flashcards",
-            // "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              },
-              {
-                "name": "LinkedIn"
-              },
-              {
-                "name": "PostgreSQL"
-              },
-              {
-                "name": "VueJS"
-              },
-            ]
-          },
-
+        localApps: [ //for testing locally
             {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            // "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              }
-            ]
-          },
+        "name": "Flashcards App",
+        "slug": "flashcards-app",
+        "live_url": "https://mpv-flashcards.herokuapp.com/",
+        "repo_url": "https://github.com/MatiasPineda/flashcards",
+        "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
+        "skills_project": [
             {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
                 "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              }
-            ]
-          },
+            },
             {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
                 "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              }
-            ]
-          },
+            },
             {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
                 "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              }
-            ]
-          },{
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            "live_url": "https://github.com/MatiasPineda/flashcards",
-            // "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              }
-            ]
-          },
+            },
             {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
                 "name": "CSS"
-              }
-            ]
-          },
+            },
             {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              }
-            ]
-          },
-            {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              }
-            ]
-          },
-            {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              }
-            ]
-          },
-            {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              }
-            ]
-          },
-
+                "name": "Bootstrap"
+            }
         ],
-
-         */
+        "imagenes": [
+            {
+                "image": require('@/assets/borrar/flashcards1.png')
+            },
+            {
+                "image": require('@/assets/borrar/flashcards2.png')
+            },
+            {
+                "image": require('@/assets/borrar/flashcards3.png')
+            },
+            {
+                "image": require('@/assets/borrar/flashcards4.png')
+            }
+        ]
+    },
+    {
+        "name": "Sismos Recientes Chile",
+        "slug": "sismos-recientes-chile",
+        "live_url": "",
+        "repo_url": "https://github.com/MatiasPineda/Recent-Earthquakes-CL",
+        "description": "Aplicación simple en PyQt5 que muestra los 15 temblores más recientes en Chile, junto a una imagen de la zona",
+        "skills_project": [
+            {
+                "name": "Python"
+            },
+            {
+                "name": "PyQt5"
+            }
+        ],
+        "imagenes": [
+            {
+                "image": require('@/assets/borrar/eq1.png')
+            },
+            {
+                "image": require('@/assets/borrar/eq2.png')
+            },
+            {
+                "image": require('@/assets/borrar/eq3.png')
+            },
+            {
+                "image": require('@/assets/borrar/eq4.gif')
+            }
+        ]
+    },
+    {
+        "name": "Farmacias de Turno",
+        "slug": "farmacias-de-turno",
+        "live_url": "",
+        "repo_url": "https://github.com/MatiasPineda/farmacia-de-turno",
+        "description": "Sitio que entrega las farmacias de turno en la comuna seleccionada.\r\n\r\nSe actualiza a las 13hrs de cada día.",
+        "skills_project": [
+            {
+                "name": "Django"
+            },
+            {
+                "name": "Python"
+            },
+            {
+                "name": "HTML"
+            },
+            {
+                "name": "CSS"
+            },
+            {
+                "name": "Bootstrap"
+            },
+            {
+                "name": "Javascript"
+            },
+            {
+                "name": "VueJS"
+            }
+        ],
+        "imagenes": [
+            {
+                "image": require('@/assets/borrar/farmacias1.png')
+            },
+            {
+                "image": require('@/assets/borrar/farmacias1.png')
+            },
+            {
+                "image": require('@/assets/borrar/farmacias1.png')
+            }
+        ]
+    }
+]
       }
     },
     created() {
