@@ -1,16 +1,26 @@
 <template>
-  <v-row id="techi">
-    <v-col v-for="(tech,j) in techList" :key="j"
-           cols="1"
-           class="pa-0 mx-1 mx-md-1 mx-xl-3"
+  <v-row id="techi" >
+    <v-avatar
+              tile
+              v-for="(tech,j) in techList" :key="j"
+              class="tech-avatar mx-1 mx-md-1 mx-xl-3 "
+              v-bind:size="avatarSize"
+              v-resize="onResize"
     >
-    <v-img
-        class="tech-icon"
-        :src="require('@/assets/' + logo[0][tech.name])"
-        contain height="8vh" width="8vh"
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-img
 
-      />
-    </v-col>
+            v-bind="attrs"
+            v-on="on"
+            class="tech-icon"
+            :src="require('@/assets/' + logo[0][tech.name])"
+            contain
+          />
+        </template>
+        <span>{{tech.name}}</span>
+      </v-tooltip>
+    </v-avatar>
   </v-row>
 </template>
 
@@ -20,6 +30,7 @@
     props: ["techList"],
     data() {
       return {
+        avatarSize: "3.5vw",
         logo : [{
           "Django": "django.svg",
           "Bootstrap": "bootstrap_logo.svg",
@@ -36,6 +47,12 @@
       }
     },
     methods: {
+      onResize: function(){
+        this.avatarSize = "3.5vw"
+        if (screen.width <=600) {
+          this.avatarSize = "6.5vh"
+        }
+      },
       showLogo: function(logoname) {
         return ("@/assets/" + this.logo[0][logoname])
       }
@@ -43,6 +60,5 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss">
 </style>

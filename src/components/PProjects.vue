@@ -28,7 +28,7 @@
         lg="4"
         class="mx-auto"
       >
-        <ProjectCard v-bind:app="app"/>
+<!--        <ProjectCard v-bind:app="app"/>-->
 
       </v-col>
     </v-row>
@@ -36,14 +36,14 @@
 </template>
 
 <script>
-  import ProjectCard from "./ProjectCard";
+  // import ProjectCard from "./ProjectCard";
   import ProjectCard2 from "./ProjectCard2";
 
   export default {
     name: "PProjects",
     components: {
       ProjectCard2,
-      ProjectCard
+      // ProjectCard
     },
     data() {
       return {
@@ -51,8 +51,8 @@
           {
             "name": "Flashcards App",
             "slug": "flashcards-app",
-            "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
+            // "live_url": "https://github.com/MatiasPineda/flashcards",
+            // "repo_url": "https://github.com/MatiasPineda/flashcards",
             "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
             "skills_project": [
               {
@@ -166,7 +166,7 @@
             "name": "Flashcards App",
             "slug": "flashcards-app",
             "live_url": "https://github.com/MatiasPineda/flashcards",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
+            // "repo_url": "https://github.com/MatiasPineda/flashcards",
             "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
             "skills_project": [
               {

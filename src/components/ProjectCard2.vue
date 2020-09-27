@@ -1,6 +1,6 @@
 <template>
-  <v-hover v-slot:default="{ hover }">
-    <v-card id="projectCard">
+  <v-hover id="hoverrrrrrrr" v-slot:default="{ hover }">
+    <v-card id="projectCard" class="px-3">
       <v-row>
         <v-col cols="12" class="">
           <v-img
@@ -36,6 +36,7 @@
 
           <v-card-actions >
             <v-btn
+                v-if="app.live_url"
                 :href="app.live_url"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -46,6 +47,7 @@
             <v-spacer />
 
             <v-btn
+                v-if="app.repo_url"
                 :href="app.repo_url"
                 target="_blank"
                 rel="noopener noreferrer"

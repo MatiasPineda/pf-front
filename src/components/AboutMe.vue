@@ -24,12 +24,13 @@
           </v-card-text>
           <v-card-title id="aboutMeTech" class="pb-1">Lenguajes, Frameworks y Librerías</v-card-title>
           <v-card-actions class="pl-3">
+            <tech-logos v-bind:techList="allTech" />
 <!--            <tech-logos v-bind:techList="all techs" />  Need to add this to the api  -->
-            <v-img class="tech-icon" :src="require('@/assets/html5.svg')" contain max-height="2em" max-width="2em" />
-            <v-img class="tech-icon" :src="require('@/assets/css3.svg')" contain max-height="2em" max-width="2em" />
-            <v-img class="tech-icon" :src="require('@/assets/js.svg')" contain max-height="2em" max-width="2em" />
-            <v-img class="tech-icon" :src="require('@/assets/python.svg')" contain max-height="2em" max-width="2em" />
-            <v-img class="tech-icon" :src="require('@/assets/django.svg')" contain max-height="2em" max-width="2em" />
+<!--            <v-img class="tech-icon" :src="require('@/assets/html5.svg')" contain max-height="2em" max-width="2em" />-->
+<!--            <v-img class="tech-icon" :src="require('@/assets/css3.svg')" contain max-height="2em" max-width="2em" />-->
+<!--            <v-img class="tech-icon" :src="require('@/assets/js.svg')" contain max-height="2em" max-width="2em" />-->
+<!--            <v-img class="tech-icon" :src="require('@/assets/python.svg')" contain max-height="2em" max-width="2em" />-->
+<!--            <v-img class="tech-icon" :src="require('@/assets/django.svg')" contain max-height="2em" max-width="2em" />-->
           </v-card-actions>
         </v-col>
       </v-row>
@@ -38,8 +39,40 @@
 </template>
 
 <script>
+  import TechLogos from "./TechLogos";
+
   export default {
     name: "AboutMe",
+    components: {
+      TechLogos,
+    },
+    data () {
+      return {
+        allTech: [
+            {
+              "name": "Django"
+            },
+            {
+              "name": "Python"
+            },
+            {
+              "name": "HTML"
+            },
+            {
+              "name": "CSS"
+            },
+            {
+              "name": "LinkedIn"
+            },
+            {
+              "name": "PostgreSQL"
+            },
+            {
+              "name": "VueJS"
+            },
+        ]
+      }
+    }
   }
 </script>
 
@@ -49,7 +82,7 @@
 
     #aboutMeImage {
       border-radius: 100%;
-      border: 4px solid #023E8A;
+      border: 4px solid #48CAE4;
     }
 
     * {

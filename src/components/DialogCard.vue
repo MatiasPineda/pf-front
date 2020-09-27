@@ -20,6 +20,10 @@
 
         <v-card-title id="projectTitle" v-text="app.name"></v-card-title>
 
+        <v-card-actions class="pa-0 ma-3">
+          <tech-logos v-bind:techList="app.skills_project" class="justify-center" />
+        </v-card-actions>
+
         <v-card-subtitle
             id="projectDescription"
             v-text="app.description"
@@ -28,6 +32,7 @@
         <v-card-actions >
 
           <v-btn
+              v-if="app.live_url"
               :href="app.live_url"
               target="_blank"
               rel="noopener noreferrer"
@@ -38,6 +43,7 @@
           <v-spacer />
 
           <v-btn
+              v-if="app.repo_url"
               :href="app.repo_url"
               target="_blank"
               rel="noopener noreferrer"
@@ -59,9 +65,14 @@
 </template>
 
 <script>
+  import TechLogos from "./TechLogos";
+
   export default {
     name: "DialogCard",
     props: ['app'],
+    components: {
+      TechLogos,
+    },
     data () {
       return {
         items: [
