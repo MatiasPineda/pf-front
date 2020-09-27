@@ -5,9 +5,9 @@
 
         <v-carousel class="pa-2 justify-center" height="100%" hide-delimiter-background>
           <v-carousel-item
-            v-for="(item,i) in items"
+            v-for="(item,i) in app.imagenes"
             :key="i"
-            :src="item.src"
+            :src="item.image"
             class="pb-3"
 
             contain

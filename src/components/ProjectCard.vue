@@ -1,103 +1,108 @@
 <template>
-  <v-card @click.stop=dialogTrueIfDesktop() class="fill-height">
-<!--    TODO: Check how to align height of cards-->
-    <v-img
-      src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-    />
+  <v-hover id="hoverrrrrrrr" v-slot:default="{ hover }">
+    <v-card id="projectCard" class="px-3">
+      <v-row>
+        <v-col cols="12" class="">
+          <v-img
+              class="mx-2"
+              :src=app.imagenes[0].image
+          />
+        </v-col>
 
-    <v-card-title v-text="app.name" />
+        <v-divider class="ma-1" />
 
-    <v-card-subtitle v-text="app.description" class="showIfMobile ma-2" />
 
-    <v-divider/>
-    <v-card-actions>
-      <tech-logos v-bind:techList="app.skills_project" class="justify-center" />
-<!--    <tech-logos v-bind:{{app.skills_project}}="app.skills_project" />-->
-    </v-card-actions>
+        <v-col cols="12" class="pa-0">
+          <v-card-actions class="pa-0 ma-3">
+            <tech-logos v-bind:techList="app.skills_project" class="justify-center" />
+          </v-card-actions>
+        </v-col>
 
-    <v-divider class="showIfMobile" />
+      </v-row>
 
-    <v-card-actions >
-<!--      TODO: add condition so it doesn't show if I don't have a url-->
-      <v-btn
-          :href="app.live_url"
-          target="_blank"
-          rel="noopener noreferrer"
-          text
-          class="showIfMobile"
-      >
-        Web
-      </v-btn>
 
-      <v-spacer />
+      <v-overlay
+            v-if="hover"
+            :opacity=".95"
+            absolute
+          >
+        <v-card id="overlayCard" color="transparent" class="">
+<!--          añadir flat cuando esté arreglado el tamaño-->
+          <v-card-title v-text="app.name" />
+          <v-card-actions>
+            <v-btn @click.stop=dialogTrueIfDesktop()>
+              Más Información
+            </v-btn>
+          </v-card-actions>
 
-      <v-btn
-          :href="app.repo_url"
-          target="_blank"
-          rel="noopener noreferrer"
-          text
-          class="showIfMobile"
-      >
-        <v-img
-            :src="require('@/assets/github.svg')"
-            width="1.2rem"
-            class="mx-1"
-        />
-         <v-spacer />
-        Repo
-      </v-btn>
+          <v-card-actions >
+            <v-btn
+                v-if="app.live_url"
+                :href="app.live_url"
+                target="_blank"
+                rel="noopener noreferrer"
+                v-text="'WEB'"
+                class="showIfMobile"
+            />
 
-<!--      <v-btn-->
-<!--        icon-->
-<!--        @click="show = !show"-->
-<!--      >-->
-<!--        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>-->
-<!--      </v-btn>-->
-    </v-card-actions>
+            <v-spacer />
 
-    <v-dialog id="projectDialog" v-model="dialog" max-width="80vw">
-      <dialog-card v-bind:app="app" />
-    </v-dialog>
+            <v-btn
+                v-if="app.repo_url"
+                :href="app.repo_url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="showIfMobile"
+            >
+              <v-img
+                  :src="require('@/assets/github.svg')"
+                  width="1.2rem"
+                  class="mx-1"
+              />
+               <v-spacer />
+              Repo
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-overlay>
 
-  </v-card>
+      <v-dialog id="projectDialog" v-model="dialog" max-width="80vw">
+        <dialog-card v-bind:app="app" />
+      </v-dialog>
+
+    </v-card>
+  </v-hover>
 </template>
 
 <script>
-  // import PProjects from "./PProjects";
-  // import TechLogos from "./TechLogos";
-
   import TechLogos from "./TechLogos";
   import DialogCard from "./DialogCard";
+
   export default {
-    name: "ProjectCard",
+    name: "ProjectCard2",
     components: {
+      TechLogos,
       DialogCard,
-      TechLogos
-      // PProjects
     },
     props: ['app'],
-    data () {
-      return {
-        dialog: false,
-      }
-    },
     methods: {
       dialogTrueIfDesktop(){
-        if(window.innerWidth > 960) {
-          this.dialog = true;
-        }
+        this.dialog = true;
         return this.dialog;
       }
-    }
+    },
+    data () {
+      return{
+        dialog: false,
+        overlay: false,
+      }
+    },
   }
 </script>
-<!--TODO: Fix this thing .showIfMobile-->
-<style lang="scss">
-  /*.showIfMobile {*/
-  /*  display: none;*/
-  /*  @media (max-width: 960px) {*/
-  /*    display: initial;*/
-  /*  }*/
-  /*}*/
 
+<style lang="scss">
+  #projectCard {
+    background-color: #e6fbff;
+  }
 </style>
+

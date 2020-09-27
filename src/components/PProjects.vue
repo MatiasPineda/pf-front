@@ -16,7 +16,7 @@
         lg="4"
         class="mx-auto"
       >
-        <project-card2 v-bind:app="app" />
+        <project-card v-bind:app="app" />
       </v-col>
 
       <v-col
@@ -36,17 +36,30 @@
 </template>
 
 <script>
-  // import ProjectCard from "./ProjectCard";
-  import ProjectCard2 from "./ProjectCard2";
+  import ProjectCard from "./ProjectCard";
+  import axios from "axios";
 
   export default {
     name: "PProjects",
     components: {
-      ProjectCard2,
-      // ProjectCard
+      ProjectCard,
+    },
+    methods :{
+      getProjects() {
+        const path = 'http://127.0.0.1:8000/api/v1.0/projects/'
+        axios.get(path).then((response) => {
+          this.apps = response.data
+        })
+            .catch((error) => {
+              console.log(error)
+            })
+      },
+
     },
     data() {
       return {
+        apps: [],
+        /*
         apps: [
           {
             "name": "Flashcards App",
@@ -290,7 +303,12 @@
           },
 
         ],
+
+         */
       }
+    },
+    created() {
+      this.getProjects()
     }
   }
 </script>
