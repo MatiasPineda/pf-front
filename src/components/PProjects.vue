@@ -175,7 +175,6 @@
       font-family: "Noto Sans JP Bold";
       font-size: 2.2em;
       color: #CAF0F8;
-      border-bottom: 3px solid #48CAE4;
     }
   }
 

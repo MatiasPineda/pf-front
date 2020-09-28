@@ -120,7 +120,7 @@
     }
 
     #projectTitle{
-      word-break: keep-all;
+      word-break: normal;
       font-family: "Noto Sans JP Medium";
       font-size: 2em; /* <h1> */
       border-bottom: 3px solid #48CAE4;

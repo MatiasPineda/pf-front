@@ -29,7 +29,7 @@
     props: ["techList"],
     data() {
       return {
-        avatarSize: "2.5em",
+        avatarSize: "2em",
         logo : [{
           "Django": "django.svg",
           "Bootstrap": "bootstrap_logo.svg",

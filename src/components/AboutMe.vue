@@ -89,6 +89,7 @@
       }
 
       #aboutMeTech {
+        word-break: normal;
         min-width: 100%;
         font-size: 1.5em; /* <h2> */
       }

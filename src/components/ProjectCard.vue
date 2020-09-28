@@ -39,7 +39,7 @@
           </v-card-actions>
 
           <v-row id="overlayUrls"  justify="space-around">
-            <v-col cols="4" class="text-center">
+            <v-col cols="4" class="text-center px-0">
               <v-btn
                   v-if="app.live_url"
                   :href="app.live_url"
@@ -51,7 +51,7 @@
               </v-btn>
             </v-col>
 
-            <v-col cols="4" class="text-center">
+            <v-col cols="4" class="text-center px-0">
               <v-btn
                   v-if="app.repo_url"
                   :href="app.repo_url"
@@ -134,14 +134,14 @@
       }
 
       #overlayTitle {
-        word-break: keep-all;
+        word-break: normal;
         font-size: 1.5em;
         padding:5%;
         border-bottom: 3px solid #48CAE4;
       }
 
       #overlayMoreInfo{
-        padding:8%;
+        padding:4%;
         @media (max-width: 600px ) {
           font-size: 1em;
           padding: 5%;
