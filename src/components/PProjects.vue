@@ -110,9 +110,6 @@
             {
                 "image": require('@/assets/borrar/eq3.png')
             },
-            {
-                "image": require('@/assets/borrar/eq4.gif')
-            }
         ]
     },
     {
