@@ -42,7 +42,7 @@ export default {
 <style lang="scss">
   #projectsBtn {
 
-    margin-top: 1em;
+    margin-top: 1.2em;
     *{
       height: 2em;
       font-size: 1em;
