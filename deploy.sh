@@ -14,6 +14,7 @@ cd dist
 
 git init
 git add -A
+git config --global http.postBuffer 524288000
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io

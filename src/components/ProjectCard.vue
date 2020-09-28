@@ -29,11 +29,12 @@
             :opacity=".95"
             absolute
             color="#023E8A"
+            z-index=""
           >
         <v-card id="overlayCard" color="transparent" class="" flat light>
           <v-card-title id="overlayTitle" v-text="app.name" class="" />
           <v-card-actions id="overlayMoreInfo">
-            <v-btn @click.stop=dialogTrueIfDesktop() class="infoButton overlayButton" >
+            <v-btn class="infoButton overlayButton" @click.stop=dialogTrueIfDesktop() >
               Más Información
             </v-btn>
           </v-card-actions>
@@ -158,7 +159,6 @@
       .overlayButton{
         background-color: #03045E;
         height: 3.5em;
-        opacity: 70%;
         min-width: 100%;
         @media (max-width: 600px ) {
           height: 2em;
