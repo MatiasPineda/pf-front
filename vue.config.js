@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath:'/portafolio/',
+  publicPath:'/pf-front/',
   "transpileDependencies": [
     "vuetify"
   ],
