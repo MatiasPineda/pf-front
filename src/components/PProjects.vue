@@ -8,7 +8,7 @@
       <v-divider />
 
       <v-col
-        v-for="(app, i) in apps"
+        v-for="(app, i) in localApps"
         :key="i"
         cols="12"
         sm="6"
