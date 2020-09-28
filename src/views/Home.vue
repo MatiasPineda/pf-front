@@ -6,11 +6,12 @@
     <v-img
         id="aboutMeSection"
         :src="require('@/assets/bg.png')"
-        class="align-center pa-6 pa-md-15 "
+        class="align-center"
     >
       <about-me />
       <div class="text-center" id="projectsBtn">
         <v-btn
+            rounded
             v-text="'MIRA MI TRABAJO'"
             class="ma-3 mx-auto mb-9"
             @click="$vuetify.goTo('#projectWrapper', {duration: 900,offset: 0,easing: 'easeInOutCubic'})"
@@ -43,18 +44,13 @@ export default {
 
     margin-top: 1em;
     *{
-      font-size: calc(16px + (64 - 16) * ((100vw - 768px) / (3840 - 768)));
-      line-height: 1.2em;
-
-      height: 2.2em; /* button height*/
-
-      @media screen and (max-width: 768px) {
-        font-size: 16px;
-      }
-      @media screen and (min-width: 3840px) {
-        font-size: 64px;
-      }
+      height: 2em;
+      font-size: 1em;
+      color: #03045E;
+      background-color: #e6fbff;
+      border: 2px solid #48CAE4;
     }
+
   }
 
 </style>

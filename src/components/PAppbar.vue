@@ -14,8 +14,11 @@
 </script>
 
 <style lang="scss">
+  .v-toolbar__content{
+    min-height: 6vw;
+  }
   .contactLogos {
-    top:0;
+    padding-right: 3vw;
     * {
       opacity: 0.8;
     }

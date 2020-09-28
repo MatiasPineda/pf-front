@@ -5,7 +5,6 @@
               v-for="(tech,j) in techList" :key="j"
               class="tech-avatar mx-1 mx-md-1 mx-xl-3 "
               v-bind:size="avatarSize"
-              v-resize="onResize"
     >
       <v-tooltip bottom>
         <template v-slot:activator="{ on, attrs }">
@@ -30,7 +29,7 @@
     props: ["techList"],
     data() {
       return {
-        avatarSize: "3.5vw",
+        avatarSize: "2.5em",
         logo : [{
           "Django": "django.svg",
           "Bootstrap": "bootstrap_logo.svg",
@@ -49,9 +48,9 @@
     },
     methods: {
       onResize: function(){
-        this.avatarSize = "3.5vw"
+        this.avatarSize = "2.5em"
         if (screen.width <=600) {
-          this.avatarSize = "6.5vh"
+          this.avatarSize = "2.5em"
         }
       },
       showLogo: function(logoname) {

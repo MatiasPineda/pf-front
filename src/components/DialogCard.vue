@@ -5,8 +5,8 @@
 
         <v-carousel class="pa-2 justify-center" height="100%" hide-delimiter-background>
           <v-carousel-item
-            v-for="(item,i) in app.imagenes"
-            :key="i"
+            v-for="(item,k) in app.imagenes"
+            :key="k"
             :src="item.image"
             class="pb-3"
 
@@ -16,48 +16,49 @@
       </v-col>
 
 
-      <v-col id="infoColumn" cols="12" sm="5" class="mx-auto fill-height" >
+      <v-col id="infoColumn" cols="12" sm="5" class="mx-auto overflow-y-auto fill-height" >
 
         <v-card-title id="projectTitle" v-text="app.name"></v-card-title>
 
-        <v-card-actions class="pa-0 ma-3">
-          <tech-logos v-bind:techList="app.skills_project" class="justify-center" />
+        <v-card-actions  class="pa-0 ma-3">
+          <tech-logos id="techLogosWrapper" v-bind:techList="app.skills_project" class="justify-center" />
         </v-card-actions>
 
         <v-card-subtitle
             id="projectDescription"
             v-text="app.description"
-            class="my-4"
         />
-        <v-card-actions >
+        <v-row id="overlayUrls"  justify="space-around">
+            <v-col cols="4" class="text-center px-0">
+              <v-btn
+                v-if="app.live_url"
+                :href="app.live_url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="dialogButton px-0"
+                >
+                <span>Web</span>
+              </v-btn>
+            </v-col>
 
-          <v-btn
-              v-if="app.live_url"
-              :href="app.live_url"
-              target="_blank"
-              rel="noopener noreferrer"
-              v-text="'WEB'"
-              class="showIfMobile"
-          />
-
-          <v-spacer />
-
+           <v-col cols="4" class="text-center px-0">
           <v-btn
               v-if="app.repo_url"
               :href="app.repo_url"
               target="_blank"
               rel="noopener noreferrer"
-              class="showIfMobile"
+              class="dialogButton px-0"
           >
             <v-img
                 :src="require('@/assets/github.svg')"
-                width="1.2rem"
+                width="1.2em"
+                max-width="1.2em"
                 class="mx-1"
             />
-             <v-spacer />
-            Repo
-          </v-btn>
-        </v-card-actions>
+            <span>Repo</span>
+              </v-btn>
+            </v-col>
+          </v-row>
       </v-col>
 
     </v-row>
@@ -105,21 +106,48 @@
     background-color: #CAF0F8;
 
     * {
-      font-size: calc(16px + (64 - 16) * ((100vw - 768px) / (3840 - 768)));
+      font-size: calc(16px + (26 - 16) * ((100vw - 768px) / (1920 - 768)));
+      color: #030423;
+
       line-height: 1.2em;
 
       @media screen and (max-width: 768px) {
         font-size: 16px;
       }
-      @media screen and (min-width: 3840px) {
-        font-size: 64px;
+      @media screen and (min-width: 1920px) {
+        font-size: 26px;
       }
     }
 
     #projectTitle{
+      word-break: keep-all;
+      font-family: "Noto Sans JP Medium";
       font-size: 2em; /* <h1> */
+      border-bottom: 3px solid #48CAE4;
     }
 
+    #techLogosWrapper {
+      margin: 4%;
+    }
+
+    #projectDescription {
+      overflow-y: auto;
+      margin-top: 10%;
+      margin-bottom: 20%;
+    }
+
+    #overlayUrls {
+      padding: 8%;
+    }
+
+    .dialogButton {
+      * {
+        font-family: "Noto Sans JP Bold";
+      }
+      min-width: 85%;
+      background-color: #e6fbff;
+      height: 3em;
+    }
 
   }
 </style>

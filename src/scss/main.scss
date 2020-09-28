@@ -3,4 +3,14 @@
 
 body * {
   font-family: "Noto Sans JP Light";
+
+  font-size: calc(16px + (26 - 16) * ((100vw - 768px) / (1920 - 768)));
+  line-height: 1.2em;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1920px) {
+    font-size: 26px;
+  }
 }
