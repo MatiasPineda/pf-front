@@ -36,6 +36,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="dialogButton px-0"
+                outlined elevation="0"
                 >
                 <span>Web</span>
               </v-btn>
@@ -48,6 +49,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="dialogButton px-0"
+              outlined elevation="0"
           >
             <v-img
                 :src="require('@/assets/github.svg')"
@@ -145,7 +147,6 @@
         font-family: "Noto Sans JP Bold";
       }
       min-width: 85%;
-      background-color: #e6fbff;
       height: 3em;
     }
 

@@ -171,6 +171,7 @@
     #projectTitle {
       font-family: "Noto Sans JP Bold";
       font-size: 2.2em;
+      margin-bottom: 1.2em;
       color: #CAF0F8;
     }
   }

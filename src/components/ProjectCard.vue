@@ -34,7 +34,12 @@
         <v-card id="overlayCard" color="transparent" class="" flat light>
           <v-card-title id="overlayTitle" v-text="app.name" class="" />
           <v-card-actions id="overlayMoreInfo">
-            <v-btn class="infoButton overlayButton" @click.stop=dialogTrueIfDesktop() >
+            <v-btn
+                class="infoButton overlayButton"
+                @click.stop=dialogTrueIfDesktop()
+                outlined
+                elevation="0"
+            >
               Más Información
             </v-btn>
           </v-card-actions>
@@ -47,6 +52,8 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="urlButton overlayButton"
+                  elevation="0"
+                  outlined
               >
                 <span>Web</span>
               </v-btn>
@@ -59,12 +66,14 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="urlButton overlayButton"
+                  elevation="0"
+                  outlined
               >
                 <v-img
                     style="filter:invert(100%)"
                     :src="require('@/assets/github.svg')"
-                    width="1.2rem"
-                    height="1.2rem"
+                    max-width="1.2rem"
+                    max-height="1.2rem"
                     class="mx-1"
                 />
                 <span>Repo</span>
@@ -157,13 +166,15 @@
       }
 
       .overlayButton{
-        background-color: #03045E;
         height: 3.5em;
         min-width: 100%;
         @media (max-width: 600px ) {
           height: 2em;
           font-size: 1em;
           padding: 1%;
+        }
+        span{
+          font-size: 1em;
         }
       }
 
