@@ -46,7 +46,8 @@
     },
     data() {
       return {
-        apps: []
+        apps: [],
+        localApps: [], // placeholder for testing
       }
     },
     created() {
