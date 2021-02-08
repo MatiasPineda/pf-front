@@ -8,7 +8,7 @@
       <v-divider />
 
       <v-col
-        v-for="(app, i) in localApps"
+        v-for="(app, i) in apps"
         :key="i"
         cols="12"
         sm="6"
@@ -33,10 +33,10 @@
     },
     methods :{
       getProjects() {
-        const path = 'http://mpineda.cl/api/v1.0/projects/'
+        const path = 'http://api.mpineda.cl/v1.0/projects/'
         axios.get(path).then((response) => {
-          // this.apps = this.localApps.concat(response.data)
-          this.apps = response.data
+          this.apps = this.localApps.concat(response.data)
+          // this.apps = response.data
         })
             .catch((error) => {
               console.log(error)
@@ -46,114 +46,7 @@
     },
     data() {
       return {
-        apps: [],
-        localApps: [
-          {
-            "name": "Flashcards App",
-            "slug": "flashcards-app",
-            "live_url": "https://mpv-flashcards.herokuapp.com/",
-            "repo_url": "https://github.com/MatiasPineda/flashcards",
-            "description": "Simple Aplicación que permite añadir tarjetas con preguntas y respuestas, con el objetivo de posteriormente revisarlas como forma de estudio.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              },
-              {
-                "name": "Bootstrap"
-              }
-            ],
-            "imagenes": [
-              {
-                "image": require('@/assets/borrar/flashcards1.png')
-              },
-              {
-                "image": require('@/assets/borrar/flashcards2.png')
-              },
-              {
-                "image": require('@/assets/borrar/flashcards3.png')
-              },
-              {
-                "image": require('@/assets/borrar/flashcards4.png')
-              }
-            ]
-          },
-          {
-            "name": "Sismos Recientes Chile",
-            "slug": "sismos-recientes-chile",
-            "live_url": "",
-            "repo_url": "https://github.com/MatiasPineda/Recent-Earthquakes-CL",
-            "description": "Aplicación simple en PyQt5 que muestra los 15 temblores más recientes en Chile, junto a una imagen de la zona",
-            "skills_project": [
-              {
-                "name": "Python"
-              },
-              {
-                "name": "PyQt5"
-              }
-            ],
-            "imagenes": [
-              {
-                "image": require('@/assets/borrar/eq1.png')
-              },
-              {
-                "image": require('@/assets/borrar/eq2.png')
-              },
-              {
-                "image": require('@/assets/borrar/eq3.png')
-              },
-            ]
-          },
-          {
-            "name": "Farmacias de Turno",
-            "slug": "farmacias-de-turno",
-            "live_url": "",
-            "repo_url": "https://github.com/MatiasPineda/farmacia-de-turno",
-            "description": "Sitio que entrega las farmacias de turno en la comuna seleccionada.\r\n\r\nSe actualiza a las 13hrs de cada día.",
-            "skills_project": [
-              {
-                "name": "Django"
-              },
-              {
-                "name": "Python"
-              },
-              {
-                "name": "HTML"
-              },
-              {
-                "name": "CSS"
-              },
-              {
-                "name": "Bootstrap"
-              },
-              {
-                "name": "Javascript"
-              },
-              {
-                "name": "VueJS"
-              }
-            ],
-            "imagenes": [
-              {
-                "image": require('@/assets/borrar/farmacias1.png')
-              },
-              {
-                "image": require('@/assets/borrar/farmacias1.png')
-              },
-              {
-                "image": require('@/assets/borrar/farmacias1.png')
-              }
-            ]
-          }
-        ],
+        apps: []
       }
     },
     created() {
